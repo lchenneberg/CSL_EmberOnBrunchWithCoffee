@@ -246,7 +246,7 @@ window.require.define({"templates/application": function(exports, require, modul
     var buffer = '', stack1, stack2, stack3, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression;
 
 
-    data.buffer.push("<div class=\"container\">\n    <h1>ApplicationView</h1>\n    <div class=\"well\">\n        ");
+    data.buffer.push("\n<div class=\"container\">\n	<h1>ApplicationView</h1>\n	<div class=\"well\">\n		");
     stack1 = depth0;
     stack2 = "outlet";
     stack3 = helpers._triageMustache;
@@ -256,7 +256,7 @@ window.require.define({"templates/application": function(exports, require, modul
     tmp1.contexts.push(stack1);
     tmp1.data = data;
     stack1 = stack3.call(depth0, stack2, tmp1);
-    data.buffer.push(escapeExpression(stack1) + "\n    </div>\n</div>");
+    data.buffer.push(escapeExpression(stack1) + "\n	</div>\n</div>");
     return buffer;
   });
    module.exports = module.id;
