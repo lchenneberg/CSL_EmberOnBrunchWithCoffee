@@ -241,7 +241,28 @@ window.require.define({"templates": function(exports, require, module) {
 
 window.require.define({"templates/application": function(exports, require, module) {
   
+<<<<<<< HEAD
   Ember.TEMPLATES[module.id] = Ember.Handlebars.compile("<div class=\"container\">\n    <h1>ApplicationView</h1>\n    <div class=\"well\">\n        {{outlet}}\n    </div>\n</div>");
+=======
+  Ember.TEMPLATES[module.id] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+  helpers = helpers || Ember.Handlebars.helpers;
+    var buffer = '', stack1, stack2, stack3, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression;
+
+
+    data.buffer.push("\n<div class=\"container\">\n	<h1>ApplicationView</h1>\n	<div class=\"well\">\n		");
+    stack1 = depth0;
+    stack2 = "outlet";
+    stack3 = helpers._triageMustache;
+    tmp1 = {};
+    tmp1.hash = {};
+    tmp1.contexts = [];
+    tmp1.contexts.push(stack1);
+    tmp1.data = data;
+    stack1 = stack3.call(depth0, stack2, tmp1);
+    data.buffer.push(escapeExpression(stack1) + "\n	</div>\n</div>");
+    return buffer;
+  });
+>>>>>>> development
    module.exports = module.id;
 }});
 
