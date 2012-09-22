@@ -241,93 +241,19 @@ window.require.define({"templates": function(exports, require, module) {
 
 window.require.define({"templates/application": function(exports, require, module) {
   
-  Ember.TEMPLATES[module.id] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-  helpers = helpers || Ember.Handlebars.helpers;
-    var buffer = '', stack1, stack2, stack3, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression;
-
-
-    data.buffer.push("<div class=\"container\">\n    <h1>ApplicationView</h1>\n    <div class=\"well\">\n        ");
-    stack1 = depth0;
-    stack2 = "outlet";
-    stack3 = helpers._triageMustache;
-    tmp1 = {};
-    tmp1.hash = {};
-    tmp1.contexts = [];
-    tmp1.contexts.push(stack1);
-    tmp1.data = data;
-    stack1 = stack3.call(depth0, stack2, tmp1);
-    data.buffer.push(escapeExpression(stack1) + "\n    </div>\n</div>");
-    return buffer;
-  });
+  Ember.TEMPLATES[module.id] = Ember.Handlebars.compile("<div class=\"container\">\n    <h1>ApplicationView</h1>\n    <div class=\"well\">\n        {{outlet}}\n    </div>\n</div>");
    module.exports = module.id;
 }});
 
 window.require.define({"templates/bob": function(exports, require, module) {
   
-  Ember.TEMPLATES[module.id] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-  helpers = helpers || Ember.Handlebars.helpers;
-    var buffer = '', stack1, stack2, stack3, stack4, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression;
-
-
-    data.buffer.push("<h2>");
-    stack1 = depth0;
-    stack2 = "fullName";
-    stack3 = helpers._triageMustache;
-    tmp1 = {};
-    tmp1.hash = {};
-    tmp1.contexts = [];
-    tmp1.contexts.push(stack1);
-    tmp1.data = data;
-    stack1 = stack3.call(depth0, stack2, tmp1);
-    data.buffer.push(escapeExpression(stack1) + "'s page!</h2>\n<a class=\"btn btn-success\" ");
-    stack1 = depth0;
-    stack2 = "doClick";
-    stack3 = {};
-    stack4 = "view";
-    stack3['target'] = stack4;
-    stack4 = helpers.action;
-    tmp1 = {};
-    tmp1.hash = stack3;
-    tmp1.contexts = [];
-    tmp1.contexts.push(stack1);
-    tmp1.data = data;
-    stack1 = stack4.call(depth0, stack2, tmp1);
-    data.buffer.push(escapeExpression(stack1) + ">click me</a>\n<a class=\"btn\" ");
-    stack1 = depth0;
-    stack2 = "doHome";
-    stack3 = helpers.action;
-    tmp1 = {};
-    tmp1.hash = {};
-    tmp1.contexts = [];
-    tmp1.contexts.push(stack1);
-    tmp1.data = data;
-    stack1 = stack3.call(depth0, stack2, tmp1);
-    data.buffer.push(escapeExpression(stack1) + ">go back home</a>");
-    return buffer;
-  });
+  Ember.TEMPLATES[module.id] = Ember.Handlebars.compile("<h2>{{fullName}}'s page!</h2>\n<a class=\"btn btn-success\" {{action doClick target=\"view\"}}>click me</a>\n<a class=\"btn\" {{action doHome}}>go back home</a>");
    module.exports = module.id;
 }});
 
 window.require.define({"templates/home": function(exports, require, module) {
   
-  Ember.TEMPLATES[module.id] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-  helpers = helpers || Ember.Handlebars.helpers;
-    var buffer = '', stack1, stack2, stack3, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression;
-
-
-    data.buffer.push("<h2>You are on the home page</h2>\n<a class=\"btn\" ");
-    stack1 = depth0;
-    stack2 = "doBob";
-    stack3 = helpers.action;
-    tmp1 = {};
-    tmp1.hash = {};
-    tmp1.contexts = [];
-    tmp1.contexts.push(stack1);
-    tmp1.data = data;
-    stack1 = stack3.call(depth0, stack2, tmp1);
-    data.buffer.push(escapeExpression(stack1) + ">go to bob's page</a>");
-    return buffer;
-  });
+  Ember.TEMPLATES[module.id] = Ember.Handlebars.compile("<h2>You are on the home page</h2>\n<a class=\"btn\" {{action doBob}}>go to bob's page</a>");
    module.exports = module.id;
 }});
 
